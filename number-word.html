@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number to Word</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        input[type="number"] {
+            width: 50px;
+            height: 20px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 80px;
+            height: 30px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #3e8e41;
+        }
+
+        #result {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Enter a digit from 0 to 9:</h1>
+    <input type="number" id="num" max="9" min="0">
+    <button id="submit">Submit</button>
+    <p id="result"></p>
+
+    <script>
+        const numInput = document.getElementById('num');
+        const submitBtn = document.getElementById('submit');
+        const resultPara = document.getElementById('result');
+
+        submitBtn.addEventListener('click', () => {
+            const num = parseInt(numInput.value);
+            if (isNaN(num) || num < 0 || num > 9) {
+                resultPara.textContent = 'e no go better for YOU Werey Omo';
+            } else {
+                const numbers = ['Zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine'];
+                resultPara.textContent = numbers[num];
+            }
+        });
+    </script>
+</body>
+</html>
